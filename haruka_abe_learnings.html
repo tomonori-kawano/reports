@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>阿部遥さんの学び - 2026年1月〜2月</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #f0f2f5;
+    color: #1a1a2e;
+    line-height: 1.8;
+  }
+
+  /* ===== HERO SECTION ===== */
+  .hero {
+    background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+    color: white;
+    padding: 60px 40px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size: 30px 30px;
+    animation: drift 20s linear infinite;
+  }
+  @keyframes drift {
+    from { transform: translate(0, 0); }
+    to { transform: translate(30px, 30px); }
+  }
+  .hero h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    position: relative;
+  }
+  .hero .subtitle {
+    font-size: 1rem;
+    opacity: 0.85;
+    font-weight: 300;
+    position: relative;
+  }
+  .hero .period {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 6px 20px;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 400;
+    position: relative;
+  }
+
+  /* ===== CONTAINER ===== */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+  }
+
+  /* ===== SUMMARY STATS ===== */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 48px;
+    margin-top: -30px;
+    position: relative;
+    z-index: 1;
+  }
+  .stat-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    transition: transform 0.2s;
+  }
+  .stat-card:hover { transform: translateY(-3px); }
+  .stat-card .stat-icon { font-size: 1.8rem; margin-bottom: 8px; }
+  .stat-card .stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #e53935;
+  }
+  .stat-card .stat-label {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 4px;
+  }
+
+  /* ===== SECTION HEADER ===== */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    margin-top: 16px;
+  }
+  .section-header .icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+  .section-header h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  .section-header p {
+    font-size: 0.85rem;
+    color: #888;
+  }
+
+  /* ===== THEME COLORS ===== */
+  .theme-thinking  .icon { background: #ffebee; }
+  .theme-skill     .icon { background: #fef3e2; }
+  .theme-biz       .icon { background: #e6f9f0; }
+  .theme-mind      .icon { background: #fce4ec; }
+  .theme-stretch   .icon { background: #f3e5f5; }
+
+  /* ===== LEARNING CARD ===== */
+  .learning-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 28px 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    border-left: 4px solid transparent;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .learning-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+  }
+  .theme-thinking .learning-card { border-left-color: #e53935; }
+  .theme-skill    .learning-card { border-left-color: #f59e0b; }
+  .theme-biz      .learning-card { border-left-color: #10b981; }
+  .theme-mind     .learning-card { border-left-color: #ec4899; }
+  .theme-stretch  .learning-card { border-left-color: #a855f7; }
+
+  .card-date {
+    font-size: 0.75rem;
+    color: #aaa;
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .card-date::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .theme-thinking .card-date::before { background: #e53935; }
+  .theme-skill    .card-date::before { background: #f59e0b; }
+  .theme-biz      .card-date::before { background: #10b981; }
+  .theme-mind     .card-date::before { background: #ec4899; }
+  .theme-stretch  .card-date::before { background: #a855f7; }
+
+  .card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  .card-body {
+    font-size: 0.92rem;
+    color: #444;
+    line-height: 1.9;
+  }
+  .card-body .highlight {
+    background: linear-gradient(transparent 60%, rgba(229,57,53,0.15) 60%);
+    font-weight: 500;
+  }
+  .card-body .quote {
+    display: block;
+    margin: 12px 0;
+    padding: 12px 16px;
+    background: #f8f9fb;
+    border-radius: 8px;
+    border-left: 3px solid #e53935;
+    font-style: italic;
+    color: #555;
+  }
+
+  /* ===== TAG ===== */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 14px;
+  }
+  .tag {
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 500;
+  }
+  .tag-blue   { background: #ffebee; color: #e53935; }
+  .tag-green  { background: #e6f9f0; color: #0f9d58; }
+  .tag-orange { background: #fef3e2; color: #d97706; }
+  .tag-pink   { background: #fce4ec; color: #d81b60; }
+  .tag-purple { background: #f3e5f5; color: #8e24aa; }
+
+  /* ===== TIMELINE ===== */
+  .timeline {
+    position: relative;
+    padding-left: 32px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #e53935, #ff7043);
+    border-radius: 1px;
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 32px;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -27px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid #e53935;
+    z-index: 1;
+  }
+  .timeline-date {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #e53935;
+    margin-bottom: 4px;
+  }
+  .timeline-content {
+    font-size: 0.88rem;
+    color: #555;
+    line-height: 1.7;
+  }
+
+  /* ===== GROWTH ===== */
+  .growth-section {
+    background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+    border-radius: 20px;
+    padding: 36px 32px;
+    color: white;
+    margin-top: 48px;
+    margin-bottom: 32px;
+  }
+  .growth-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  .growth-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 18px;
+    align-items: flex-start;
+  }
+  .growth-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  .growth-text {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    opacity: 0.95;
+  }
+  .growth-text strong {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 2px;
+    opacity: 1;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    text-align: center;
+    padding: 32px 0;
+    font-size: 0.78rem;
+    color: #aaa;
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding: 40px 20px 36px; }
+    .hero h1 { font-size: 1.5rem; }
+    .container { padding: 30px 16px 40px; }
+    .learning-card { padding: 20px; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>阿部遥さんの学びレポート</h1>
+  <p class="subtitle">DX推進ユニット 日報から見える成長の軌跡</p>
+  <span class="period">2026年1月 〜 2月10日</span>
+</div>
+
+<!-- CONTAINER -->
+<div class="container">
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-icon">&#x1F4DD;</div>
+      <div class="stat-number">7</div>
+      <div class="stat-label">日報投稿数</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">&#x1F4A1;</div>
+      <div class="stat-number">12</div>
+      <div class="stat-label">学びポイント</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">&#x1F680;</div>
+      <div class="stat-number">3</div>
+      <div class="stat-label">成長テーマ</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">&#x1F3AF;</div>
+      <div class="stat-number">1</div>
+      <div class="stat-label">今期ストレッチ</div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 1: 構造的思考 ===== -->
+  <div class="theme-thinking">
+    <div class="section-header">
+      <div class="icon">&#x1F9E0;</div>
+      <div>
+        <h2>構造的思考力の向上</h2>
+        <p>ロジカルに物事を捉え、仮説を立てる力</p>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月16日（木）</div>
+      <div class="card-title">Whyツリーの作り方 &#x2014; 深掘りと切り上げの見極め</div>
+      <div class="card-body">
+        WhyツリーはMECEに出すことも必要だが、あまり細かく出しても意味がないところは<span class="highlight">「なぜこの選択肢を深掘らなくていいか」の理由が言えたら切り上げてOK</span>。何を見つけたいかに立ち返らないと沼にハマるので注意。
+        <span class="quote">2年前よりもMCのことを知っていたり物事を構造的に捉える力がついたようで、1人で考えて行き詰まってどうしようもないということがだいぶ少なくなった</span>
+      </div>
+      <div class="tags">
+        <span class="tag tag-blue">仮説思考</span>
+        <span class="tag tag-blue">MECE</span>
+        <span class="tag tag-green">成長実感</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月22日（木）</div>
+      <div class="card-title">ボトルネック分析 &#x2014; データだけでなくビジネスプロセスに目を向ける</div>
+      <div class="card-body">
+        カレンダー分析データだけでは筋の良い仮説を出し切れなかった。仮説を出す時は<span class="highlight">「根本のビジネスプロセス」にボトルネックがないかを思考する</span>ことが重要。MTGを減らすボトルネック変数として「ビジネスプロセス」「マネジメントスタイル」が根底にあることがパターン化できた。AIに聞くと、さらに組織構造・情報の可視化・スキル・文化/心理を加えた6軸で検討するとよいとのこと。
+      </div>
+      <div class="tags">
+        <span class="tag tag-blue">ボトルネック分析</span>
+        <span class="tag tag-orange">AI活用</span>
+        <span class="tag tag-purple">パターン化</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月21日（水）</div>
+      <div class="card-title">Who / What / How で事業インサイトを整理する</div>
+      <div class="card-body">
+        インターン時代の商談音声データ分析サービスの経験を踏まえ、Who（戦略/コアターゲット）、What（解決したい課題）、How（提供方法）で整理。<span class="highlight">商談内容がブラックボックスになっていることが多く、課題特定には「アイスブレイク・クロージング・ニーズ把握・質問対応」等の観点が必要</span>。サービスを継続利用してもらうには読み解き会+NA設定会をセットで提供することが有効。
+      </div>
+      <div class="tags">
+        <span class="tag tag-blue">事業分析</span>
+        <span class="tag tag-green">インサイト</span>
+        <span class="tag tag-orange">経験の活用</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 2: ツール・AI活用 ===== -->
+  <div class="theme-skill">
+    <div class="section-header">
+      <div class="icon">&#x1F916;</div>
+      <div>
+        <h2>ツール・AI活用</h2>
+        <p>テクノロジーを活かして業務を効率化</p>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月7日（水）</div>
+      <div class="card-title">AIツールの進化を見逃さない &#x2014; 「できないだろう」を疑う</div>
+      <div class="card-body">
+        ChatGPTもアップデートしている。<span class="highlight">「これまでできないだろう」と思っていたことも、n8n等を作る前にまず一回やらせてみる</span>ことが大切。例えば、100件分のPDFから文字起こしさせてExcelに出力する、といったタスクも可能になっている可能性がある。
+      </div>
+      <div class="tags">
+        <span class="tag tag-orange">ChatGPT</span>
+        <span class="tag tag-orange">n8n</span>
+        <span class="tag tag-blue">実験マインド</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">2月2日（月）</div>
+      <div class="card-title">AIで初心者のハードルを下げる &#x2014; 型化 × テクノロジー</div>
+      <div class="card-body">
+        思考の型化は得意分野。<span class="highlight">「納品したことのない自分でもできる」基準まで落とせれば、1年目の子や新ジョインメンバーのインプットコストも大幅に低減できる</span>。AIを使えば初心者でもここまでできる、というラインを見せられるよう挑戦中。
+      </div>
+      <div class="tags">
+        <span class="tag tag-orange">AI活用</span>
+        <span class="tag tag-purple">型化</span>
+        <span class="tag tag-green">人材育成</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 3: ビジネス・対人スキル ===== -->
+  <div class="theme-biz">
+    <div class="section-header">
+      <div class="icon">&#x1F91D;</div>
+      <div>
+        <h2>ビジネス・対人スキル</h2>
+        <p>現場での気づきとコミュニケーション</p>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">2月2日（月）</div>
+      <div class="card-title">対面アポの価値 &#x2014; 非言語コミュニケーションの力</div>
+      <div class="card-body">
+        お客様に対面で納品することで、目線が合う等の<span class="highlight">非言語コミュニケーションの大切さ</span>を実感。紙で印刷して持っていくのも、先方のITリテラシーだけでなく「みんなで同じ資料を見ている安心感」や「丁寧さ」が感じられるメリットがある。普段Zoomでは口を開かない部長も積極的に発言してくれるなど、定量で測りきれない良さがある。
+        <span class="quote">「初回は挨拶と関係構築を兼ねてお邪魔させていただく」など対面のアポをプロセスで固定しても良いのでは</span>
+      </div>
+      <div class="tags">
+        <span class="tag tag-green">対面コミュニケーション</span>
+        <span class="tag tag-pink">非言語</span>
+        <span class="tag tag-blue">プロセス設計</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月21日（水）</div>
+      <div class="card-title">MTGの準備 &#x2014; 仮で決めることと場で議論することの切り分け</div>
+      <div class="card-body">
+        <span class="highlight">「仮で決めて持っていくところ」と「場で議論するところ」の切り分け</span>が課題。余計に準備してしまってMTGで触れられず無駄になることも多い。コツを掴むために模索中。
+      </div>
+      <div class="tags">
+        <span class="tag tag-green">MTG効率化</span>
+        <span class="tag tag-blue">準備力</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月26日（月）</div>
+      <div class="card-title">事業理解の深化 &#x2014; 基準型化と定着がカギ</div>
+      <div class="card-body">
+        結局は<span class="highlight">基準型化とそれの定着</span>に行き着く。MCカンパニーで1つの長がいる構造は統合しやすい。LMの事業について決算資料等をもとに理解を深め、自分なりの意見を持てるように取り組む。
+      </div>
+      <div class="tags">
+        <span class="tag tag-green">事業理解</span>
+        <span class="tag tag-purple">標準化</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">2月3日（火）</div>
+      <div class="card-title">事業分析は自社から始める &#x2014; 実感を持って学ぶ</div>
+      <div class="card-body">
+        知らない企業でいきなりやってもピンとこない。<span class="highlight">まずは自社（LMI）で事業分析をやってみて、実感を掴みながら進める</span>。その後、ENTで扱うようなより大きな企業（LMG等）に広げていく。
+      </div>
+      <div class="tags">
+        <span class="tag tag-green">事業分析</span>
+        <span class="tag tag-blue">段階的学習</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 4: マインドセット ===== -->
+  <div class="theme-mind">
+    <div class="section-header">
+      <div class="icon">&#x2728;</div>
+      <div>
+        <h2>マインドセット・自己管理</h2>
+        <p>内面の変化と持続可能な働き方</p>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月22日（木）</div>
+      <div class="card-title">スマホ断ちの効果 &#x2014; 良いサイクルへ</div>
+      <div class="card-body">
+        <span class="highlight">寝る前の1時間はスマホを見ないようにする</span>ことを続けたところ、起きるのが楽になり、いいサイクルに入ってきている。
+      </div>
+      <div class="tags">
+        <span class="tag tag-pink">生活習慣</span>
+        <span class="tag tag-pink">セルフマネジメント</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月7日（水）</div>
+      <div class="card-title">小さな一歩を積み重ねる &#x2014; 毎日ジム入館</div>
+      <div class="card-body">
+        徒歩2分のところにジムができたので、<span class="highlight">「毎日とりあえず入館だけはする」</span>ことを1Qのプライベート目標に設定。ハードルを下げてまず行動を習慣化する姿勢。
+      </div>
+      <div class="tags">
+        <span class="tag tag-pink">習慣化</span>
+        <span class="tag tag-purple">目標設定</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GROWTH TRAJECTORY ===== -->
+  <div class="growth-section">
+    <h2>&#x1F331; 成長の軌跡まとめ</h2>
+    <div class="growth-item">
+      <div class="growth-num">1</div>
+      <div class="growth-text">
+        <strong>構造的思考の深化</strong>
+        Whyツリー・ボトルネック分析・Who/What/How等のフレームワークを使いこなし、「1人で考えて行き詰まることが減った」と自身でも成長を実感
+      </div>
+    </div>
+    <div class="growth-item">
+      <div class="growth-num">2</div>
+      <div class="growth-text">
+        <strong>AI × 型化 で誰でもできる仕組みへ</strong>
+        ChatGPTやn8nの活用を前提に、初心者でも回せる基準を作ることで組織全体のインプットコスト低減を目指す視点
+      </div>
+    </div>
+    <div class="growth-item">
+      <div class="growth-num">3</div>
+      <div class="growth-text">
+        <strong>「正解探しからの脱却」がストレッチテーマ</strong>
+        仮説を立てて動く、場で議論すべき点を見極める等、不確実性の中でも前に進む姿勢を磨いている
+      </div>
+    </div>
+    <div class="growth-item">
+      <div class="growth-num">4</div>
+      <div class="growth-text">
+        <strong>現場感の醸成</strong>
+        対面アポ同席で非言語コミュニケーションの価値を体感し、プロセスとしての対面活用を提案できるまでに
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TIMELINE ===== -->
+  <div class="section-header" style="margin-top: 48px;">
+    <div class="icon" style="background: #e8f0fe;">&#x1F4C5;</div>
+    <div>
+      <h2>日報タイムライン</h2>
+      <p>日報の投稿と主なトピック</p>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">1月7日（水）</div>
+      <div class="timeline-content">個人目標のたたき完成 / ChatGPT活用の再評価 / ジム習慣化スタート</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">1月16日（木）</div>
+      <div class="timeline-content">Whyツリー洗い出し / MECEと深掘りの見極め / 構造的思考の成長実感</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">1月22日（木）</div>
+      <div class="timeline-content">カレンダー分析 → ビジネスプロセス思考へ / ボトルネック6軸分析 / スマホ断ち</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">1月26日（月）</div>
+      <div class="timeline-content">モニタリング指標の仮説検討 / 基準型化と定着 / バリューマップの挑戦</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">1月30日（木）</div>
+      <div class="timeline-content">2月の動き思考 / 運用確認MTGクオリティ向上 / OH前の追い込み</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2月2日（月）</div>
+      <div class="timeline-content">新基準での企業分析 / 対面アポの価値を体感 / 思考の型化と展開</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2月3日（火）</div>
+      <div class="timeline-content">LMIでの事業分析実践 / ENT案件への段階的展開 / 実感ベースの学び</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  #日報-dx推進u から自動収集 &middot; Generated on 2026-02-10
+</div>
+
+</body>
+</html>

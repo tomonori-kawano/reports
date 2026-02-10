@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>森田晶子さんの学び - 2026年1月〜2月</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Noto Sans JP', sans-serif; background: #f0f2f5; color: #1a1a2e; line-height: 1.8; }
+
+  .hero {
+    background: linear-gradient(135deg, #4facfe 0%, #1565c0 100%);
+    color: white; padding: 60px 40px 50px; text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 28px 28px; animation: drift 25s linear infinite;
+  }
+  @keyframes drift { from { transform: translate(0,0); } to { transform: translate(28px,28px); } }
+  .hero h1 { font-size: 2rem; font-weight: 700; margin-bottom: 8px; position: relative; }
+  .hero .subtitle { font-size: 1rem; opacity: 0.85; font-weight: 300; position: relative; }
+  .hero .period { display: inline-block; margin-top: 16px; padding: 6px 20px; border: 1px solid rgba(255,255,255,0.4); border-radius: 30px; font-size: 0.85rem; position: relative; }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 40px 20px 60px; }
+
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 48px; margin-top: -30px; position: relative; z-index: 1; }
+  .stat-card { background: white; border-radius: 16px; padding: 24px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.2s; }
+  .stat-card:hover { transform: translateY(-3px); }
+  .stat-card .stat-icon { font-size: 1.8rem; margin-bottom: 8px; }
+  .stat-card .stat-number { font-size: 2rem; font-weight: 700; color: #1976d2; }
+  .stat-card .stat-label { font-size: 0.8rem; color: #888; margin-top: 4px; }
+
+  .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; margin-top: 16px; }
+  .section-header .icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
+  .section-header h2 { font-size: 1.3rem; font-weight: 700; }
+  .section-header p { font-size: 0.85rem; color: #888; }
+
+  .theme-pm .icon { background: #e3f2fd; }
+  .theme-meeting .icon { background: #e8f5e9; }
+  .theme-reporting .icon { background: #e3f2fd; }
+  .theme-metrics .icon { background: #fff3e0; }
+  .theme-domain .icon { background: #f3e5f5; }
+
+  .learning-card {
+    background: white; border-radius: 16px; padding: 28px 28px 24px; margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04); border-left: 4px solid transparent; transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .learning-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
+  .theme-pm .learning-card { border-left-color: #1976d2; }
+  .theme-meeting .learning-card { border-left-color: #4caf50; }
+  .theme-reporting .learning-card { border-left-color: #2196f3; }
+  .theme-metrics .learning-card { border-left-color: #ff9800; }
+  .theme-domain .learning-card { border-left-color: #9c27b0; }
+
+  .card-date { font-size: 0.75rem; color: #aaa; font-weight: 500; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+  .card-date::before { content: ''; width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  .theme-pm .card-date::before { background: #1976d2; }
+  .theme-meeting .card-date::before { background: #4caf50; }
+  .theme-reporting .card-date::before { background: #2196f3; }
+  .theme-metrics .card-date::before { background: #ff9800; }
+  .theme-domain .card-date::before { background: #9c27b0; }
+
+  .card-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; line-height: 1.5; }
+  .card-body { font-size: 0.92rem; color: #444; line-height: 1.9; }
+  .card-body .highlight { background: linear-gradient(transparent 60%, rgba(25,118,210,0.15) 60%); font-weight: 500; }
+  .card-body .quote { display: block; margin: 12px 0; padding: 12px 16px; background: #f8f9fb; border-radius: 8px; border-left: 3px solid #1976d2; font-style: italic; color: #555; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .tag { padding: 3px 12px; border-radius: 20px; font-size: 0.72rem; font-weight: 500; }
+  .tag-pink { background: #fce4ec; color: #c62828; }
+  .tag-green { background: #e8f5e9; color: #2e7d32; }
+  .tag-blue { background: #e3f2fd; color: #1565c0; }
+  .tag-orange { background: #fff3e0; color: #e65100; }
+  .tag-purple { background: #f3e5f5; color: #6a1b9a; }
+
+  /* Motto banner */
+  .motto-banner {
+    background: white; border-radius: 16px; padding: 24px 28px; margin-bottom: 40px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04); text-align: center; border: 2px dashed #1976d2;
+  }
+  .motto-banner .motto-label { font-size: 0.75rem; color: #1976d2; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+  .motto-banner .motto-text { font-size: 1.2rem; font-weight: 700; color: #1a1a2e; }
+  .motto-banner .motto-sub { font-size: 0.85rem; color: #888; margin-top: 6px; }
+
+  /* Action Plan tracker */
+  .ap-tracker { background: white; border-radius: 16px; padding: 28px; margin-bottom: 40px; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+  .ap-tracker h3 { font-size: 1rem; font-weight: 700; margin-bottom: 16px; }
+  .ap-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .ap-label { font-size: 0.88rem; color: #444; flex: 1; }
+  .ap-bar-bg { width: 120px; height: 10px; background: #f0f0f0; border-radius: 5px; overflow: hidden; flex-shrink: 0; }
+  .ap-bar { height: 100%; border-radius: 5px; }
+  .ap-bar.good { background: linear-gradient(90deg, #4caf50, #66bb6a); }
+  .ap-bar.mid { background: linear-gradient(90deg, #ff9800, #ffb74d); }
+  .ap-pct { font-size: 0.78rem; font-weight: 700; width: 36px; text-align: right; flex-shrink: 0; }
+
+  .growth-section {
+    background: linear-gradient(135deg, #4facfe 0%, #1565c0 100%);
+    border-radius: 20px; padding: 36px 32px; color: white; margin-top: 48px; margin-bottom: 32px;
+  }
+  .growth-section h2 { font-size: 1.3rem; margin-bottom: 20px; }
+  .growth-item { display: flex; gap: 14px; margin-bottom: 18px; align-items: flex-start; }
+  .growth-num { width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; flex-shrink: 0; }
+  .growth-text { font-size: 0.92rem; line-height: 1.7; opacity: 0.95; }
+  .growth-text strong { display: block; font-weight: 700; margin-bottom: 2px; opacity: 1; }
+
+  .timeline { position: relative; padding-left: 32px; }
+  .timeline::before { content: ''; position: absolute; left: 11px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, #1976d2, #4facfe); border-radius: 1px; }
+  .timeline-item { position: relative; margin-bottom: 28px; }
+  .timeline-item::before { content: ''; position: absolute; left: -27px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: white; border: 3px solid #1976d2; z-index: 1; }
+  .timeline-date { font-size: 0.8rem; font-weight: 700; color: #1976d2; margin-bottom: 4px; }
+  .timeline-content { font-size: 0.88rem; color: #555; line-height: 1.7; }
+
+  .footer { text-align: center; padding: 32px 0; font-size: 0.78rem; color: #aaa; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 40px 20px 36px; } .hero h1 { font-size: 1.5rem; }
+    .container { padding: 30px 16px 40px; } .learning-card { padding: 20px; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>森田晶子さんの学びレポート</h1>
+  <p class="subtitle">DX推進ユニット 日報から見える成長の軌跡</p>
+  <span class="period">2026年1月 〜 2月10日</span>
+</div>
+
+<div class="container">
+
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-icon">&#x1F4DD;</div>
+      <div class="stat-number">19</div>
+      <div class="stat-label">日報投稿数</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">&#x1F4A1;</div>
+      <div class="stat-number">15</div>
+      <div class="stat-label">学びポイント</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">&#x1F3AF;</div>
+      <div class="stat-number">5</div>
+      <div class="stat-label">成長テーマ</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">&#x26A0;&#xFE0F;</div>
+      <div class="stat-number">1</div>
+      <div class="stat-label">定期点検モットー</div>
+    </div>
+  </div>
+
+  <!-- MOTTO -->
+  <div class="motto-banner">
+    <div class="motto-label">&#x1F6A8; 定期点検モットー</div>
+    <div class="motto-text">「やってみないとわからない」は危険！</div>
+    <div class="motto-sub">毎日の日報に欠かさず記載。不確実性を早期に潰す姿勢を体現</div>
+  </div>
+
+  <!-- ACTION PLAN TRACKER -->
+  <div class="ap-tracker">
+    <h3>&#x1F4CA; アクションプラン達成トラッキング（1月〜2月）</h3>
+    <div class="ap-row">
+      <div class="ap-label">月火木は19:30に帰る</div>
+      <div class="ap-bar-bg"><div class="ap-bar mid" style="width: 55%;"></div></div>
+      <div class="ap-pct" style="color: #ff9800;">55%</div>
+    </div>
+    <div class="ap-row">
+      <div class="ap-label">PMとしての判断をすり合わせる</div>
+      <div class="ap-bar-bg"><div class="ap-bar good" style="width: 75%;"></div></div>
+      <div class="ap-pct" style="color: #4caf50;">75%</div>
+    </div>
+    <div class="ap-row">
+      <div class="ap-label">キーマンへ仮説を立てて聞く</div>
+      <div class="ap-bar-bg"><div class="ap-bar good" style="width: 90%;"></div></div>
+      <div class="ap-pct" style="color: #4caf50;">90%</div>
+    </div>
+  </div>
+
+  <!-- SECTION 1: PM としての時間投下 -->
+  <div class="theme-pm">
+    <div class="section-header">
+      <div class="icon">&#x23F1;&#xFE0F;</div>
+      <div>
+        <h2>PM としての時間投下の最適化</h2>
+        <p>今期ストレッチ：投下時間によらず成果を最大化するPM</p>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月5日〜8日</div>
+      <div class="card-title">課題仮説 ＞ 計画 で時間投下すべき</div>
+      <div class="card-body">
+        課題仮説を決めないまま計画に時間を使いすぎた。実質翌週までしか立てられず再計画が前提になり、効果が薄い部分に時間を投下してしまった。<span class="highlight">問いが明確になっていないので、アウトプットを作ることが目的になってしまった</span>。
+        <span class="quote">早く成果を出すためには、課題仮説 ＞ 計画 で時間投下したほうがよかった</span>
+      </div>
+      <div class="tags">
+        <span class="tag tag-pink">優先順位</span>
+        <span class="tag tag-blue">問いの明確化</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月9日（木）</div>
+      <div class="card-title">投下時間のグラデーションを持たせる</div>
+      <div class="card-body">
+        大事なところにちゃんと時間投下する。<span class="highlight">やらないことを明確に決めないと中途半端になる</span>ので、自分自身の投下割合・見るべき観点・実績をまとめて、関与度合いを整理する。広くPMをやると等しく分散してしまうので、KR成功のためにもっと深く入る。
+      </div>
+      <div class="tags">
+        <span class="tag tag-pink">リソース配分</span>
+        <span class="tag tag-green">やらないこと</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">2月2日〜6日</div>
+      <div class="card-title">PJに入る頻度と情報キャッチアップのバランス</div>
+      <div class="card-body">
+        PJに入る頻度を減らすと前提情報の理解がしきれなくなる。<span class="highlight">報告の仕方やキャッチアップの仕方を工夫しないと把握できなくなってくる</span>。時間の制約がある中での振る舞いが難しい。「ここだけ入る、ここは入らない」が明確になってきたが、方針が見いだせないPJにはガッツリ入ってしまう課題がある。
+      </div>
+      <div class="tags">
+        <span class="tag tag-pink">時間配分</span>
+        <span class="tag tag-blue">情報設計</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: 会議体の質向上 -->
+  <div class="theme-meeting">
+    <div class="section-header">
+      <div class="icon">&#x1F4CB;</div>
+      <div>
+        <h2>会議体の質向上・業務効率化</h2>
+        <p>MTGを減らし、質を上げる取り組み</p>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月22日（木）</div>
+      <div class="card-title">車輪の再発明をしない &#x2014; ECRSの実践</div>
+      <div class="card-body">
+        日程調整系の課題が出たときに、<span class="highlight">「車輪の再発明をしない」「ECRS」の観点をもとに、派遣さんに移譲する / MCとオペレーション揃えられるか検討するを最初に行えた</span>ことで、無駄なタスクをしなくて済んだ。スカウト配信の横展開タスクをEM側に移譲する動きも取れた。
+      </div>
+      <div class="tags">
+        <span class="tag tag-green">ECRS</span>
+        <span class="tag tag-green">権限移譲</span>
+        <span class="tag tag-blue">効率化</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月26日（月）</div>
+      <div class="card-title">会議体の冒頭にゴール・完了基準を読み合わせる</div>
+      <div class="card-body">
+        様々なことが型になっておらず、ひっ迫を招いている。<span class="highlight">毎回の会議体の冒頭にゴール/完了基準の読み合わせをしてから始める</span>ことを決定。マイルストーンは理想ではなく現実（スキルセットや稼働状況）を鑑みた計画にすべき。課題も「何の問題が解決したらDONEなのか」目的立脚で考える。
+      </div>
+      <div class="tags">
+        <span class="tag tag-green">完了基準</span>
+        <span class="tag tag-pink">会議設計</span>
+        <span class="tag tag-orange">型化</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月16日〜29日</div>
+      <div class="card-title">18時以降のMTGを入れない &#x2014; 作業時間の確保</div>
+      <div class="card-body">
+        ミーティングが夕方まであると時間を取れず、いろいろスタックしてしまう。<span class="highlight">18時以降はミーティングを入れないように調整</span>。全体的にメンバーと一緒にMTG数を見直し、作業時間を確保する必要がある。
+      </div>
+      <div class="tags">
+        <span class="tag tag-green">時間管理</span>
+        <span class="tag tag-pink">MTG最適化</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: 報告・伝え方 -->
+  <div class="theme-reporting">
+    <div class="section-header">
+      <div class="icon">&#x1F4E2;</div>
+      <div>
+        <h2>報告・資料の伝え方</h2>
+        <p>初見でスッと伝わるシンプルさを追求</p>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月15日（水）</div>
+      <div class="card-title">TopMtg資料の失敗 &#x2014; シンプルさが最強</div>
+      <div class="card-body">
+        TopMtg資料で大きくズレてやり直しに。見る人にとって<span class="highlight">読み解いて解釈することが必要な報告になってしまった</span>。初見の人がスッと入る内容にすべき。営業配置転換人数→顧客接地時間への数値変換など、変に変換しようとしないことが大事。
+      </div>
+      <div class="tags">
+        <span class="tag tag-blue">シンプルさ</span>
+        <span class="tag tag-blue">報告設計</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">2月4日（水）</div>
+      <div class="card-title">AIに自作ドキュメントを読み解かせてチェック</div>
+      <div class="card-body">
+        <span class="highlight">AIに自分が作ったドキュメントを読み解かせて、AIが混乱するものは全部シンプルにする</span>。自分ルールを作るとコミュニケーションコストが増えてしまうので、自分で運用するからいいや…としない。
+      </div>
+      <div class="tags">
+        <span class="tag tag-blue">AI活用</span>
+        <span class="tag tag-orange">品質チェック</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: 指標設計 -->
+  <div class="theme-metrics">
+    <div class="section-header">
+      <div class="icon">&#x1F4CF;</div>
+      <div>
+        <h2>指標設計の学び</h2>
+        <p>誰でもわかる基準を作る</p>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">2月2日〜3日</div>
+      <div class="card-title">割合%は避けて「到達基準」で指標を設計する</div>
+      <div class="card-body">
+        <span class="highlight">割合％は指標が複雑になるので避ける。XX回でチェックポイントを置く</span>。また、「XXh増加」という指標は認識のズレが起こりやすい。「XXh, XX回に到達する」という誰でもわかる基準を目標にする。
+      </div>
+      <div class="tags">
+        <span class="tag tag-orange">指標設計</span>
+        <span class="tag tag-orange">認識合わせ</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">2月6日（金）</div>
+      <div class="card-title">Q初の稼働割合でGAPを週次で課題解決</div>
+      <div class="card-body">
+        目の前の対応にとらわれ、自分の時間をどこに投下すべきか？の視点ができていなかった。<span class="highlight">Q初に決めた稼働割合をもとにGAPを出して週次で課題解決する</span>。火曜日あたりで定点チェックすると良さそう。
+      </div>
+      <div class="tags">
+        <span class="tag tag-orange">定点チェック</span>
+        <span class="tag tag-pink">PDCA</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 5: ドメイン理解 -->
+  <div class="theme-domain">
+    <div class="section-header">
+      <div class="icon">&#x1F50D;</div>
+      <div>
+        <h2>ドメイン理解・現場感の醸成</h2>
+        <p>営業ドメインのキャッチアップと専門家活用</p>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月27日〜28日</div>
+      <div class="card-title">ドメインエキスパートを見つけて頼る</div>
+      <div class="card-body">
+        営業の部分はドメイン知識がなく判断できないことが多い。<span class="highlight">ドメインエキスパートをちゃんと頼っていく</span>。REのリピート営業は仕掛けが遅いと手遅れになるリスクがあるが、「REの営業はXXに頼る」が見えていなかったので、エキスパートを見つけるところから着手。
+      </div>
+      <div class="tags">
+        <span class="tag tag-purple">ドメイン理解</span>
+        <span class="tag tag-green">専門家活用</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月7日（火）</div>
+      <div class="card-title">現場理解の知見がある人にやり方を聞く</div>
+      <div class="card-body">
+        カレンダーデータや資料ベースだけでは現状理解に限界がある。やり方を模索して時間を無駄に投下してしまった。<span class="highlight">現場理解の知見がある人にやり方を聞く。兼務が一番良い</span>と思い始めている。
+      </div>
+      <div class="tags">
+        <span class="tag tag-purple">現場理解</span>
+        <span class="tag tag-blue">ナレッジ共有</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月21日（火）</div>
+      <div class="card-title">案件併走は楽しい &#x2014; アラートを立てる力</div>
+      <div class="card-body">
+        案件併走はめちゃめちゃ楽しい。「このMTGやる必要ない気がするのですが何がクリアできればなくせますか？」と<span class="highlight">問いを立てられるようになった</span>のは、少しずつアンテナが張ってきたから。PJTマネジメントシートで定量化すると、まだ混沌として決まっていない部分が多いことに気付けた。
+      </div>
+      <div class="tags">
+        <span class="tag tag-purple">問いを立てる力</span>
+        <span class="tag tag-pink">アラート感度</span>
+        <span class="tag tag-green">楽しさ</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- GROWTH SECTION -->
+  <div class="growth-section">
+    <h2>&#x1F331; 成長の軌跡まとめ</h2>
+    <div class="growth-item">
+      <div class="growth-num">1</div>
+      <div class="growth-text">
+        <strong>時間投下の優先順位づけが進化</strong>
+        「課題仮説 ＞ 計画」の原則を体感し、不確実性の高い部分から先に潰す判断ができるように。Q初の稼働割合との乖離を週次でチェックする仕組みも構築
+      </div>
+    </div>
+    <div class="growth-item">
+      <div class="growth-num">2</div>
+      <div class="growth-text">
+        <strong>会議体の質を仕組みで上げる</strong>
+        ゴール/完了基準の読み合わせ、18時以降MTG禁止、ECRS活用による権限移譲など、構造的なアプローチでMTG効率化を実現
+      </div>
+    </div>
+    <div class="growth-item">
+      <div class="growth-num">3</div>
+      <div class="growth-text">
+        <strong>「伝わるシンプルさ」への意識転換</strong>
+        TopMtg資料の失敗から学び、AIで自作ドキュメントの分かりやすさをチェックするなど、受け手目線の報告設計を追求
+      </div>
+    </div>
+    <div class="growth-item">
+      <div class="growth-num">4</div>
+      <div class="growth-text">
+        <strong>指標設計の精度向上</strong>
+        割合%ではなく絶対値での到達基準、「増加」ではなく「到達」で認識のズレを防ぐ等、定量管理の技術が向上
+      </div>
+    </div>
+    <div class="growth-item">
+      <div class="growth-num">5</div>
+      <div class="growth-text">
+        <strong>問いを立てる力の成長</strong>
+        「このMTG必要？」と疑問を持てるようになり、アラート感度が向上。ドメインエキスパートを活用する動きも取れるように
+      </div>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="section-header" style="margin-top: 48px;">
+    <div class="icon" style="background: #e3f2fd;">&#x1F4C5;</div>
+    <div>
+      <h2>日報タイムライン</h2>
+      <p>主な学びと振り返りのハイライト</p>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">1月5日（月）</div>
+      <div class="timeline-content">Q初タスクの型化不足に気づく / 営業プロセスの原理原則を調べる</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">1月7日〜8日</div>
+      <div class="timeline-content">現場理解の方法模索 / 自分のリソース投下先のアラートを立てる</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">1月9日（木）</div>
+      <div class="timeline-content">投下時間のグラデーション / やらないこと明確化</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">1月13日（月）</div>
+      <div class="timeline-content">課題仮説＞計画の原則を体感 / 問いの明確化がカギ</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">1月14日〜16日</div>
+      <div class="timeline-content">PJTマネジメントシートで定量化 / TopMtg資料のやり直し体験</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">1月21日〜22日</div>
+      <div class="timeline-content">案件併走の楽しさ / ECRSによる効率化 / MTG不要の問いを立てる</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">1月26日〜29日</div>
+      <div class="timeline-content">会議体の冒頭にゴール読み合わせ / ドメインエキスパート活用</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2月2日〜6日</div>
+      <div class="timeline-content">指標設計の精度向上 / AIでドキュメント品質チェック / 稼働割合の週次GAP管理</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  #日報-dx推進u から自動収集 &middot; Generated on 2026-02-10
+</div>
+
+</body>
+</html>
