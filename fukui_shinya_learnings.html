@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>福井慎也さんの学び - 2025年1月～2026年2月</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #f5f3fb;
+    color: #1a1a2e;
+    line-height: 1.8;
+  }
+
+  /* ===== HERO SECTION ===== */
+  .hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 60px 40px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size: 30px 30px;
+    animation: drift 20s linear infinite;
+  }
+  @keyframes drift {
+    from { transform: translate(0, 0); }
+    to { transform: translate(30px, 30px); }
+  }
+  .hero h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero .subtitle {
+    font-size: 1rem;
+    opacity: 0.85;
+    font-weight: 300;
+    position: relative;
+    z-index: 1;
+  }
+  .hero .period {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 6px 20px;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ===== CONTAINER ===== */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+  }
+
+  /* ===== SUMMARY STATS ===== */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 48px;
+    margin-top: -30px;
+    position: relative;
+    z-index: 1;
+  }
+  .stat-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.1);
+    transition: transform 0.2s;
+  }
+  .stat-card:hover { transform: translateY(-3px); }
+  .stat-card .stat-icon { font-size: 1.8rem; margin-bottom: 8px; }
+  .stat-card .stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .stat-card .stat-label {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 4px;
+  }
+
+  /* ===== SECTION HEADER ===== */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    margin-top: 16px;
+  }
+  .section-header .icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  .section-header h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  .section-header p {
+    font-size: 0.85rem;
+    color: #888;
+  }
+
+  /* ===== LEARNING CARD ===== */
+  .learning-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 28px 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    border-left: 4px solid #667eea;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .learning-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(102, 126, 234, 0.12);
+  }
+
+  .card-date {
+    font-size: 0.75rem;
+    color: #888;
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .card-date::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #667eea;
+    display: inline-block;
+  }
+
+  .card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    color: #1a1a2e;
+  }
+  .card-body {
+    font-size: 0.92rem;
+    color: #444;
+    line-height: 1.9;
+  }
+  .card-body .highlight {
+    background: linear-gradient(transparent 60%, rgba(102,126,234,0.15) 60%);
+    font-weight: 500;
+  }
+  .card-body .quote {
+    display: block;
+    margin: 12px 0;
+    padding: 12px 16px;
+    background: #f5f3fb;
+    border-radius: 8px;
+    border-left: 3px solid #667eea;
+    font-style: italic;
+    color: #555;
+  }
+
+  /* ===== TAG ===== */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 14px;
+  }
+  .tag {
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    background: #f0ebfc;
+    color: #667eea;
+  }
+
+  /* ===== TIMELINE ===== */
+  .timeline {
+    position: relative;
+    padding-left: 32px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #667eea, #764ba2);
+    border-radius: 1px;
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 32px;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -27px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid #667eea;
+    z-index: 1;
+  }
+  .timeline-date {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 4px;
+  }
+  .timeline-content {
+    font-size: 0.88rem;
+    color: #555;
+    line-height: 1.7;
+  }
+
+  /* ===== GROWTH ===== */
+  .growth-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    padding: 36px 32px;
+    color: white;
+    margin-top: 48px;
+    margin-bottom: 32px;
+  }
+  .growth-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  .growth-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 18px;
+    align-items: flex-start;
+  }
+  .growth-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  .growth-text {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    opacity: 0.95;
+  }
+  .growth-text strong {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 2px;
+    opacity: 1;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    text-align: center;
+    padding: 32px 0;
+    font-size: 0.78rem;
+    color: #aaa;
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding: 40px 20px 36px; }
+    .hero h1 { font-size: 1.5rem; }
+    .container { padding: 30px 16px 40px; }
+    .learning-card { padding: 20px; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>福井慎也さんの学びレポート</h1>
+  <p class="subtitle">プロジェクトマネジメント、DX推進、人材育成を通じた成長の軌跡</p>
+  <span class="period">2025年1月 〜 2026年2月</span>
+</div>
+
+<!-- CONTAINER -->
+<div class="container">
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-icon">📝</div>
+      <div class="stat-number">23</div>
+      <div class="stat-label">日報投稿数</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">💡</div>
+      <div class="stat-number">42</div>
+      <div class="stat-label">学びポイント</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🚀</div>
+      <div class="stat-number">5</div>
+      <div class="stat-label">成長テーマ</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🎯</div>
+      <div class="stat-number">2</div>
+      <div class="stat-label">ストレッチ目標</div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 1: プロジェクトマネジメント ===== -->
+  <div class="theme-pjt">
+    <div class="section-header">
+      <div class="icon">📊</div>
+      <div>
+        <h2>プロジェクトマネジメント</h2>
+        <p>BMC、ヘルススコア、モニタリング等の複合プロジェクト管理</p>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月6日（月）</div>
+      <div class="card-title">複雑化するヘルススコアの統合思考</div>
+      <div class="card-body">
+        新組織図に基づいてBMCとヘルススコアを同時に推進。ヘルススコアは<span class="highlight">組織が分割したことで複雑さが増した状況で、なるべく統合して利を得られるようにする必要</span>がある。組織の変化を踏まえた動的なマネジメント姿勢が求められる。
+        <span class="quote">浦島太郎にならないようにしたい。育休に入る前に、変化のタイミングをしっかり引継ぐことが大事</span>
+      </div>
+      <div class="tags">
+        <span class="tag">ヘルススコア</span>
+        <span class="tag">BMC</span>
+        <span class="tag">複雑性管理</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月9日（木）</div>
+      <div class="card-title">複雑な受賞企業連絡業務の整理と時間管理</div>
+      <div class="card-body">
+        BMC受賞企業への連絡内容の確定に6時間を費やした。<span class="highlight">複雑化＆ビリヤード（非定期タスク）が多すぎる状況を整理し、体系化することが次年度の効率化につながる</span>。ここの型化は重要。
+        <span class="quote">今Q、TAがデジケントレーニングをどれだけうまくできるか？が重要。トレーニングの理解促進は関係性づくりが重要</span>
+      </div>
+      <div class="tags">
+        <span class="tag">BMC</span>
+        <span class="tag">業務効率化</span>
+        <span class="tag">TA育成</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月17日（金）</div>
+      <div class="card-title">週次KPT振り返りの組織的価値</div>
+      <div class="card-body">
+        デジケンで毎週KPT（Keep / Problem / Try）を振り返る習慣を導入。<span class="highlight">デジケンをやっていて、毎週KPT振り返りするのが本当に大事だと痛感</span>する。継続的なプロセス改善がプロジェクトの質を上げる。
+      </div>
+      <div class="tags">
+        <span class="tag">KPT</span>
+        <span class="tag">プロセス改善</span>
+        <span class="tag">習慣化</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月27日（月）</div>
+      <div class="card-title">当日グダグダを避ける詳細スケジュール設計</div>
+      <div class="card-body">
+        BMCの最大リスク「当日がグダグダになる」をなくすため、<span class="highlight">当日詳細の一人ずつのスケジュールを今から具体化。60点ぐらいは担保</span>できた。ドキュメント作成により、確認・共有のMTGで話すことがほぼなくなる効率化も実現。
+      </div>
+      <div class="tags">
+        <span class="tag">リスク管理</span>
+        <span class="tag">ドキュメント</span>
+        <span class="tag">BMC</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月30日（木）</div>
+      <div class="card-title">引継ぎにおけるAIの活用と生産性向上</div>
+      <div class="card-body">
+        明日にすぐるとはるかすと最終確認で引継ぎ終了予定。プロセス振り返ると、<span class="highlight">ちゃんと考えて洗い出しても、途中で出てくるものがある。AIを活用することで引継ぎが楽になり、クオリティが上がる</span>。
+        <span class="quote">引継ぎってすごい生産性を下げてる側面もあるが、AIがあると解決できる</span>
+      </div>
+      <div class="tags">
+        <span class="tag">引継ぎ</span>
+        <span class="tag">AI活用</span>
+        <span class="tag">生産性</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== SECTION 2: 引継ぎ・ナレッジ共有 ===== -->
+  <div class="theme-hand">
+    <div class="section-header">
+      <div class="icon">📚</div>
+      <div>
+        <h2>引継ぎ・ナレッジ共有</h2>
+        <p>プロセスの型化と知識の体系化</p>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月22日（水）</div>
+      <div class="card-title">ドキュメントの力 - 打ち合わせ時間を半減</div>
+      <div class="card-body">
+        <span class="highlight">ドキュメントをちゃんと残せば、確認・共有のMTGで話すことはほぼなくなる</span>。ユニット会やサブマネ会で多くのドキュメントを準備することで、非同期で済む情報共有が増える。これは組織全体の効率化につながる。大事にしたい習慣。
+      </div>
+      <div class="tags">
+        <span class="tag">ドキュメント</span>
+        <span class="tag">非同期</span>
+        <span class="tag">効率化</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月10日（金）</div>
+      <div class="card-title">TAトレーニングの型化における課題</div>
+      <div class="card-body">
+        <span class="highlight">TAトレーニングの帳票は結構考えたが、やっぱりまだ複雑。もっともっとシンプルにしたい</span>。型化というテーマで何度も修正を重ねている。シンプルさと完成度のバランスが重要。
+      </div>
+      <div class="tags">
+        <span class="tag">型化</span>
+        <span class="tag">TA育成</span>
+        <span class="tag">シンプル化</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月21日（水）</div>
+      <div class="card-title">TA同士の関係性構築による自己解決の増加</div>
+      <div class="card-body">
+        TA研修で関係性を作ると、<span class="highlight">TA⇔PDだけではなく、TA⇔TA（&GPT）で解決できることも増える</span>。初期投資としてのTA同士の絆が、後々の運用コスト削減につながる。コミュニティづくりの重要性。
+      </div>
+      <div class="tags">
+        <span class="tag">TA育成</span>
+        <span class="tag">コミュニティ</span>
+        <span class="tag">関係性</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">2月3日（火）</div>
+      <div class="card-title">アカウント削除方針の体系化</div>
+      <div class="card-body">
+        Dify、n8nのアカウント削除方針を検討。<span class="highlight">削除一つとってもやることがたくさんあり、引継ぎ大変</span>。これを少しでも楽にするフローを整理することが重要。観点としてはAPI付与と似ていることが多い。
+      </div>
+      <div class="tags">
+        <span class="tag">セキュリティ</span>
+        <span class="tag">ツール管理</span>
+        <span class="tag">リスク管理</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== SECTION 3: TA研修・育成 ===== -->
+  <div class="theme-train">
+    <div class="section-header">
+      <div class="icon">🎓</div>
+      <div>
+        <h2>TA研修・育成</h2>
+        <p>トレーニング体系化と人材育成</p>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月14日（火）</div>
+      <div class="card-title">受賞企業確定とTAトレーニングへの視点転換</div>
+      <div class="card-body">
+        BMCのランキング確定。同時に、<span class="highlight">今Q、TAがデジケントレーニングをどれだけうまくできるか？が重要で、ここがボトルネック</span>。トレーニングの理解向上やデジケンへの理解促進は、はるかすやすぐるの関係性づくりが良いのではないかと考え始めた。
+      </div>
+      <div class="tags">
+        <span class="tag">TA育成</span>
+        <span class="tag">トレーニング</span>
+        <span class="tag">関係性</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月21日（水）</div>
+      <div class="card-title">TA研修の充実が参加者の行動を促進</div>
+      <div class="card-body">
+        TA研修の内容が充実していたおかげで、参加者にとっては<span class="highlight">やることが見えた時間だった</span>。また、TA同士の関係性を作ると、TA⇔TA（&GPT）で解決できることも増える。トレーニングコストの削減と自走支援の両立。
+      </div>
+      <div class="tags">
+        <span class="tag">トレーニング</span>
+        <span class="tag">教育設計</span>
+        <span class="tag">成果</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月24日（金）</div>
+      <div class="card-title">KPTの継続的価値 - 毎回学びがある</div>
+      <div class="card-body">
+        <span class="highlight">KPTって毎回思うけど大事</span>。継続的な振り返りがあるからこそ、次のアクションが見える。デジケンのトレーニングでも同様に、定期的な改善サイクルが品質を確保する。
+      </div>
+      <div class="tags">
+        <span class="tag">KPT</span>
+        <span class="tag">継続改善</span>
+        <span class="tag">習慣</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">2月10日（月）</div>
+      <div class="card-title">ツールPDCAの習慣化による実装</div>
+      <div class="card-body">
+        モニタリング検証で<span class="highlight">実現したいのはツールのPDCAを回す習慣</span>。デジケン提供ツール（議事録くん等）できちんとTAと見れていないものをベースに検証を進める。効果が出ているかどうかを定期的に振り返る仕組み。
+      </div>
+      <div class="tags">
+        <span class="tag">PDCA</span>
+        <span class="tag">モニタリング</span>
+        <span class="tag">習慣化</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== SECTION 4: ビジネス推進・DX ===== -->
+  <div class="theme-dx">
+    <div class="section-header">
+      <div class="icon">⚙️</div>
+      <div>
+        <h2>ビジネス推進・DX</h2>
+        <p>Dify、API管理、セキュリティ、SRE原理原則</p>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">2月4日（水）</div>
+      <div class="card-title">セキュリティ実査で見えた丁寧さの評価</div>
+      <div class="card-body">
+        初のセキュリティ実査を実施。<span class="highlight">御社のセキュリティチェックシートの回答は他社と比べても丁寧で分かりやすい</span>との評価を得た。同時に慣習的に実査をやらないといけない側面も。きちんとログを残すことが信用構築につながる。
+      </div>
+      <div class="tags">
+        <span class="tag">セキュリティ</span>
+        <span class="tag">実査</span>
+        <span class="tag">信用構築</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">2月3日（火）</div>
+      <div class="card-title">権限付与時の5つの観点整理</div>
+      <div class="card-body">
+        <span class="highlight">権限付与をするときにチェックする5つの観点を整理した：権限範囲、追跡、コスト管理、定期レビュー、リスク管理</span>。この基準があることで、今後の判断がブレなくなり、統一的なセキュリティスタンスが実現できる。
+      </div>
+      <div class="tags">
+        <span class="tag">セキュリティ</span>
+        <span class="tag">権限管理</span>
+        <span class="tag">ガバナンス</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">2月5日（木）</div>
+      <div class="card-title">モニタリング基盤検証TAの選定課題</div>
+      <div class="card-body">
+        モニタリング検証にあたり、各部門の自動化ツール状況を調査。<span class="highlight">ENT1はほとんどがワークフローに組み込む自動化系。エラー検知ぐらいしかない。焦って変な体験になることは避けたい</span>。検証先の選定は慎重に。
+      </div>
+      <div class="tags">
+        <span class="tag">モニタリング</span>
+        <span class="tag">DX戦略</span>
+        <span class="tag">検証</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">2月6日（金）</div>
+      <div class="card-title">SRE原理原則への深掘りと毎週発信</div>
+      <div class="card-body">
+        SREの原理原則に基づく「ノンエンジニアDX組織のためのSRE」の体系化が今期ストレッチ。<span class="highlight">原理原則は理解が進んできたので、ここから毎週Qiita投稿することで、アウトプット固定して組み込まざるを得ないようにする</span>。
+      </div>
+      <div class="tags">
+        <span class="tag">SRE</span>
+        <span class="tag">体系化</span>
+        <span class="tag">アウトプット</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">2月3日（火）</div>
+      <div class="card-title">Dify障害を期に監視体系を再整理</div>
+      <div class="card-body">
+        Dify障害をきっかけに、<span class="highlight">現在の監視が何が出来ていて何が出来ていないかを整理した</span>。「入門監視」という本もおすすめいただき、監視がめちゃめちゃ面白いと気づく。技術的な好奇心の発火。
+      </div>
+      <div class="tags">
+        <span class="tag">監視</span>
+        <span class="tag">Dify</span>
+        <span class="tag">インシデント対応</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== SECTION 5: マインドセット ===== -->
+  <div class="theme-mind">
+    <div class="section-header">
+      <div class="icon">✨</div>
+      <div>
+        <h2>マインドセット・自己管理</h2>
+        <p>感情面の振り返り、目標設定、チームワーク</p>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月6日（月）</div>
+      <div class="card-title">キックオフの興奮と育休への不安のバランス</div>
+      <div class="card-body">
+        デザイン室もPD室も出ての大きなキックオフ。<span class="highlight">今後がとても楽しみだが、この変化の激しいタイミングで育休で5末までいなくなることで浦島太郎にならないようにしたい</span>。不安を引継ぎの質と丁寧さで解消するモチベーション。
+      </div>
+      <div class="tags">
+        <span class="tag">不安管理</span>
+        <span class="tag">キャリア</span>
+        <span class="tag">責任感</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月7日（水）</div>
+      <div class="card-title">キックオフの思考品質への感謝と学習</div>
+      <div class="card-body">
+        <span class="quote">キックオフありがとうございました。ジャンプの思考良かったです</span>。組織変革のキックオフで、「ジャンプ」という思考フレームが導入された。新しい組織での思考方法を学ぶことで、高い水準での議論が可能に。
+      </div>
+      <div class="tags">
+        <span class="tag">感謝</span>
+        <span class="tag">思考方法</span>
+        <span class="tag">学習</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月15日（水）</div>
+      <div class="card-title">月折り返しの心配事を潰す姿勢</div>
+      <div class="card-body">
+        1カ月折り返し時点で、<span class="highlight">ある程度月末の着地が見えてきたことは良かった。心配事はいくつかあるが、残りの半分はこの心配事をつぶす</span>。プロアクティブな課題解決姿勢。
+        <span class="quote">忙しい時こそ、TODOに追われず、目標・目的に立ち返ることを忘れない</span>
+      </div>
+      <div class="tags">
+        <span class="tag">プロアクティブ</span>
+        <span class="tag">リスク管理</span>
+        <span class="tag">目標志向</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">1月31日（金）</div>
+      <div class="card-title">気持ちよく育休に入るための最後の一歩</div>
+      <div class="card-body">
+        引継ぎの最終段階。<span class="highlight">皆さん気持ちよく受け取ってくれて、色々なリスクや対応なども潰せた</span>。AIがあると引継ぎが楽になってクオリティが上がる。次世代への責任を果たす達成感。
+        <span class="quote">皆さん素敵なメッセージありがとうございます！！ 行ってまいります～</span>
+      </div>
+      <div class="tags">
+        <span class="tag">責任完遂</span>
+        <span class="tag">チームワーク</span>
+        <span class="tag">感謝</span>
+      </div>
+    </div>
+
+    <div class="learning-card">
+      <div class="card-date">2月10日（月）</div>
+      <div class="card-title">育休から戻ってきた時の新たなストレッチ目標</div>
+      <div class="card-body">
+        育休から戻ってきて、新たなストレッチ目標を設定。<span class="highlight">「SREの原理原則に基づく『ノンエンジニアDX組織のためのSRE』の体系化と定義」</span>。毎週Qiita投稿で、アウトプットを固定する。新しいフェーズでの成長。
+      </div>
+      <div class="tags">
+        <span class="tag">ストレッチ</span>
+        <span class="tag">SRE</span>
+        <span class="tag">新たな挑戦</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== GROWTH TRAJECTORY ===== -->
+  <div class="growth-section">
+    <h2>🌱 成長の軌跡まとめ</h2>
+    <div class="growth-item">
+      <div class="growth-num">1</div>
+      <div class="growth-text">
+        <strong>複合プロジェクトの統合マネジメント</strong>
+        BMC、ヘルススコア、デジケンなど複数のプロジェクトを並行推進しながら、ドキュメント作成で非同期化を実現。組織の複雑化に対応できるシステム思考を磨いた
+      </div>
+    </div>
+    <div class="growth-item">
+      <div class="growth-num">2</div>
+      <div class="growth-text">
+        <strong>TA育成の体系化と関係性構築</strong>
+        トレーニングの型化と簡素化を繰り返しながら、TA同士の関係性構築による自走支援を実現。初期投資としてのコミュニティづくりの価値を学んだ
+      </div>
+    </div>
+    <div class="growth-item">
+      <div class="growth-num">3</div>
+      <div class="growth-text">
+        <strong>ナレッジ共有の実装と引継ぎの効率化</strong>
+        ドキュメント作成の価値を認識し、AIを活用した引継ぎプロセスの効率化を実現。知識の体系化がチーム全体の生産性向上につながることを実証
+      </div>
+    </div>
+    <div class="growth-item">
+      <div class="growth-num">4</div>
+      <div class="growth-text">
+        <strong>セキュリティとガバナンスの体系化</strong>
+        権限管理、アカウント削除、セキュリティ実査等の観点を5軸で整理。個別対応から体系的なガバナンスへの転換が実現
+      </div>
+    </div>
+    <div class="growth-item">
+      <div class="growth-num">5</div>
+      <div class="growth-text">
+        <strong>SRE原理原則の理解と発信</strong>
+        ノンエンジニアDX組織向けのSRE体系化をストレッチ目標に設定。毎週のQiita発信で、学びを組織資産化する取り組みを開始
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TIMELINE ===== -->
+  <div class="section-header" style="margin-top: 48px;">
+    <div class="icon" style="background: none; color: #667eea;">📅</div>
+    <div>
+      <h2>日報タイムライン</h2>
+      <p>23の報告から見える活動の軌跡</p>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">1月6日（月）</div>
+      <div class="timeline-content">PD室キックオフ / ヘルススコア×BMC複合推進 / 育休前の浦島太郎対策</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">1月7日（火）</div>
+      <div class="timeline-content">BMC人員アサイン決定 / ジャンプ思考の学習 / KR2トレーニング準備</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">1月8日（水）</div>
+      <div class="timeline-content">BMC進捗確認 / ヘルススコア調整 / 受賞連絡リスト化</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">1月9日（木）</div>
+      <div class="timeline-content">受賞企業連絡内容確定（6時間） / TA研修の型化推進 / KPT振り返り習慣</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">1月10日（金）</div>
+      <div class="timeline-content">BMC引継ぎ項目整理 / TAトレーニング型化継続 / ランキング確定準備</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">1月14日（火）</div>
+      <div class="timeline-content">BMCランキング確定 / 受賞企業諸々対応 / 懇親会概要設計開始</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">1月15日（水）</div>
+      <div class="timeline-content">月折り返し / HS＆BMC心配事潰し / 帳票修正継続</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">1月16日（木）</div>
+      <div class="timeline-content">モニタリング帳票修正 / HS準備 / リスク洗い出しMTG</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">1月17日（金）</div>
+      <div class="timeline-content">帳票完成 / デジケンKPT振り返り評価 / BMC集客課題抽出</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">1月20日（月）</div>
+      <div class="timeline-content">TA研修イメージング / HS運用設計 / BMC当日マニュアル準備</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">1月21日（火）</div>
+      <div class="timeline-content">TA研修参加者対応 / TA関係性構築 / ICC引継ぎ準備</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">1月22日（水）</div>
+      <div class="timeline-content">ドキュメント作成と非同期化 / デジケンLv.2トレーニング / 1Q目標設定面談</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">1月23日（木）</div>
+      <div class="timeline-content">BMC当日ナレッジ伝達 / しんとのイメージング / リスク対策検討</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">1月24日（金）</div>
+      <div class="timeline-content">お車代対応 / 問い合わせ全て解消 / KPT振り返り継続</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">1月27日（月）</div>
+      <div class="timeline-content">受賞企業最終オープン / 当日詳細スケジュール60点達成 / 朝会フォーマット引継ぎ</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">1月30日（木）</div>
+      <div class="timeline-content">HS運用決定 / 受賞連絡引継ぎ完了 / AI活用による引継ぎ効率化実感</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">1月31日（金）</div>
+      <div class="timeline-content">最終引継ぎ確認 / 育休前の最後の一歩 / チーム全体への感謝表現</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2月3日（火）</div>
+      <div class="timeline-content">育休から復帰 / TA検証ニーズ確認 / BigQuery＆GoogleChat API相談</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2月4日（水）</div>
+      <div class="timeline-content">初セキュリティ実査実施 / Dify＆n8n削除方針検討 / 監視体系整理</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2月5日（木）</div>
+      <div class="timeline-content">GRモニタリング検証開始 / セキュリティ管理週次対応 / SCS相談時間</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2月6日（金）</div>
+      <div class="timeline-content">DXU会＆DXプロダクトマネジメントゼミ / TA検証先選定 / n8nアカウント整理</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2月9日（月）</div>
+      <div class="timeline-content">モニタリング振り返り / ツール選定思考 / SRE毎週Qiita投稿開始</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2月10日（月）</div>
+      <div class="timeline-content">モニタリング候補決定 / POSSE準備 / 娘1歳前日お祝い撮影</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  #日報-pd推進室 から自動収集 &middot; Generated on 2026-02-11
+</div>
+
+</body>
+</html>
